@@ -1,45 +1,55 @@
 <!-- Main Program-->
 <head>
-  <title>OaktonIDT</title>
+  <title>IDT Shipping Services</title>
+  <link rel="stylesheet" type="text/css" href="css/OaktonIDT.css">
 </head>
 
 <body>
 </body>
 <!-- Main Program end -->
 
+<!-- Templates -->
+<!-- Layout -->
 <template name="layout">
-	{{> heading}}
 	{{> home}}
 	{{> footer}}
 </template>
 
-<template name="home">
-	<h3>This is a test</h3>
-	<h4>This is the subheading</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</template>
-
-<template name="heading">
-	<h2>This is a heading</h2>
-</template>
-
+<!-- Footer -->
 <template name="footer">
-	<h2>This is a footer</h2>
+	<div class="navbar" role="navigation">
+		<div class="container">
+			<div class="navbar-text">
+				IDT Package Shipping Services
+			</div>
+			<div class="navbar-text pull-right">
+				Oakton HS Team 1
+			</div>
+		</div>
+	</div>
 </template>
 
-<template name="thing1">
-	...
-</template>
+<!-- Home -->
+<template name="home">
+	<!-- Welcome Section -->
+	<div class="welcome">
+		<div class="jumbotron text-center">
+			<h1>Welcome.</h1>
+			<p>Thank you for your business with IDT Package Shipping Services. Please select an option below to begin tracking packages.</p>
+		</div>
+	</div>
 
-<template name="thing2">
-	...
-</template>
-
-<template name="thing3">
-	...
+	<!-- User and Administrator Selection -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3><a href="#">User</a></h3>
+				<p>Receive live updates and track all current packages for which you have a UUID.</p>
+			</div>
+			<div class="col-sm-6">
+				<h3><a href="#">Administrator</a></h3>
+				<p>See all currently shipping packages and monitor up-to-the-date information.</p>
+			</div>
+		</div>
+	</div>
 </template>
