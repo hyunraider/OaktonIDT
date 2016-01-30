@@ -4,12 +4,14 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-  {{> heading}}
-  {{> home}}
-  {{> footer}}
 </body>
 <!-- Main Program end -->
+
+<template name="layout">
+	{{> heading}}
+	{{> home}}
+	{{> footer}}
+</template>
 
 <template name="home">
 	<h3>This is a test</h3>
