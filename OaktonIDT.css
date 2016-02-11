@@ -1,1 +1,15 @@
 /* CSS declarations go here */
+h2{
+	text-align:center;
+	font-size:50px;
+	font-weight:bold;
+}
+h3{
+	color:red;
+}
+h4{
+	font-family:Verdana;
+}
+body{
+	background-color:#39AEA8;
+}
