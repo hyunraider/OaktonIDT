@@ -1,7 +1,1 @@
-This is Oakton's IDT repo
-
-Makers:
-Greg
-Grace
-Parv
-Kevin
+This is the repository for Oakton HS Team 1 in the IDT Programming Competition. Our team members are Parv Ahuja, Greg Bae, Kevin Robinson, and Grace Yu.

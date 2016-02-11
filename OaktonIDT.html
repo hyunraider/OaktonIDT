@@ -1,14 +1,18 @@
 <!-- Main Program-->
 <head>
-  <title>OaktonIDT</title>
+  <title>IDT Shipping Services</title>
+  <link rel="stylesheet" type="text/css" href="css/OaktonIDT.css">
 </head>
 
 <body>
 </body>
 <!-- Main Program end -->
 
+<!-- Templates -->
+<!-- Layout -->
 <template name="layout">
-	{{> viewPackages}}
+	{{> home}}
+	{{> footer}}
 </template>
 
 <template name="viewPackages">
@@ -32,6 +36,42 @@
 	</div>
 </template>
 
+<!-- Footer -->
+<template name="footer">
+	<div class="navbar" role="navigation">
+		<div class="container">
+			<div class="navbar-text">
+				IDT Package Shipping Services
+			</div>
+			<div class="navbar-text pull-right">
+				Oakton HS Team 1
+			</div>
+		</div>
+	</div>
+</template>
 
+<!-- Home -->
+<template name="home">
+	<!-- Welcome Section -->
+	<div class="welcome">
+		<div class="jumbotron text-center">
+			<h1>Welcome.</h1>
+			<p>Thank you for your business with IDT Package Shipping Services. Please select an option below to begin tracking packages.</p>
+		</div>
+	</div>
 
+	<!-- User and Administrator Selection -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3><a href="#">User</a></h3>
+				<p>Receive live updates and track all current packages for which you have a UUID.</p>
+			</div>
+			<div class="col-sm-6">
+				<h3><a href="#">Administrator</a></h3>
+				<p>See all currently shipping packages and monitor up-to-the-date information.</p>
+			</div>
+		</div>
+	</div>
+</template>
 
