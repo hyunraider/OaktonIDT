@@ -11,7 +11,7 @@
 <!-- Templates -->
 <!-- Layout -->
 <template name="layout">
-	{{> home}}
+	{{>yield url}}
 	{{> footer}}
 </template>
 
@@ -64,7 +64,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
-				<h3><a href="#">User</a></h3>
+				<h3><a href="/viewPackages">User</a></h3>
 				<p>Receive live updates and track all current packages for which you have a UUID.</p>
 			</div>
 			<div class="col-sm-6">

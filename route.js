@@ -1,10 +1,24 @@
 Router.configure({
-	layoutTemplate: 'layout'
+	layoutTemplate: 'layout',
+	yieldTemplates: {
+		'home': {to: 'home'},
+		'viewPackages': {to: 'viewPackages'}
+	}
 });
 
 Router.map(function () {
 	this.route('Home', {
 		path: '/',
-		template: 'layout'
+		template: 'layout',
+		data: function(){
+			Session.set('url', 'home');
+		}
+	});
+	this.route('Pages', {
+		path: '/:name',
+		template: 'layout',
+		data: function(){
+			Session.set('url', this.params.name);
+		}
 	});
 });
