@@ -52,4 +52,15 @@ h3 {
 p {
 	text-align: center;
 }
+#UUIDHeader{
+	font-size: 40px;
+	top: 20%;
+	position:absolute;
+	text-align: center;
+	width:100%;
+	font-family: "Copperplate";
+}
+#SubmitButton{
+	background-color: green;
+}
 

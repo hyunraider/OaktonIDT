@@ -8,11 +8,28 @@
 </body>
 <!-- Main Program end -->
 
-<!-- Templates -->
+<!-- Templates -->	
 <!-- Layout -->
 <template name="layout">
 	{{>yield url}}
+	<!--{{> viewPackages}}-->
 	{{> footer}}
+</template>
+
+<template name="addPackages">
+	<div class="container-fluid">
+		<h2 id="UUIDHeader">Enter Package UUID</h2>
+		<div class="row" style="position:absolute; top:40%; width:100%">
+			<div class="col-xs-4 col-xs-offset-4">
+				<input type="text" class="form-control" placeholder="Enter UUID Here" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<a href="#">
+			<button id="SubmitButton" type="button" class="btn btn-primary col-xs-2 col-xs-offset-5" style="margin-top: 30px; top:45%; position:absolute; height:3%; font-size:15px;">
+				Submit
+			</button>
+		</a>
+	</div>
 </template>
 
 <template name="viewPackages">
@@ -68,7 +85,7 @@
 				<p>Receive live updates and track all current packages for which you have a UUID.</p>
 			</div>
 			<div class="col-sm-6">
-				<h3><a href="#">Administrator</a></h3>
+				<h3><a href="/viewPackages">Administrator</a></h3>
 				<p>See all currently shipping packages and monitor up-to-the-date information.</p>
 			</div>
 		</div>
