@@ -13,6 +13,7 @@ We did change the original groovy file to make it more compatible with the Javas
 In the project root folder: $ meteor
 
 In /.idtfiles folder: $ groovy PackageTrackingJettyWebServer.groovy
+
 $ watch -n1 mongoimport --host 127.0.0.1 --port 3001 --db meteor --collection testdb testing.js
 
 #### Adding Packages:
