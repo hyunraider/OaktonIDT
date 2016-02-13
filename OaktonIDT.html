@@ -11,9 +11,7 @@
 <!-- Templates -->	
 <!-- Layout -->
 <template name="layout">
-	<!--{{> userHeader}}-->
 	{{>addPackages}}
-	<!--{{> viewPackages}}-->
 	{{> footer}}
 </template>
 
@@ -106,16 +104,21 @@
 			<div class="col-xs-6">
 				<h2 id="address" style="text-align:center; font-size: 40px; font-family: 'Copperplate'">Enter Address</h2>
 				<input type="text" class="form-control" placeholder="Latitude" aria-describedby="basic-addon1" id="searchlat" style="width:45%; display:inline">
-				<input type="text" class="form-control" placeholder="Longitude" aria-describedby="basic-addon1" id="searchlat" style="width:45%; display:inline">
-				<button id="SubmitButton" type="button" class="btn btn-primary col-xs-2 col-xs-offset-5" style="	height:5%; font-size:15px;">
+				<input type="text" class="form-control" placeholder="Longitude" aria-describedby="basic-addon1" id="searchlon" style="width:45%; display:inline">
+				<button id="EnterButton" type="button" class="btn btn-primary col-xs-2 col-xs-offset-5" style="	height:5%; font-size:15px;">
 					Enter
 				</button>
 			</div>
 		</div>
-		<div class="row" style="position: absolute; top: 25%; width: 100%; height: 60%;">
+		<div class="row" style="position: absolute; top: 25%; width: 100%; height: 55%;">
 			<div class="col-xs-8 col-xs-offset-2" style="height: 100%;">
 				{{> googleMap name="exampleMap" options=exampleMapOptions}}
 			</div>
+		</div>
+		<div class="row" style="position: absolute; top:80%; width: 100%;">
+			{{#if distance}}
+			<h4 style="text-align: center">Distance to location: {{distance}} miles</h4>
+			{{/if}}
 		</div>
 	</div>
 </template>

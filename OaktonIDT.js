@@ -1,5 +1,6 @@
 if (Meteor.isClient){
 	Session.setDefault('uuid', null);
+	Session.setDefault('distance', null);
 
 	Template.layout.helpers({
 	  url: function(){
@@ -17,11 +18,35 @@ if (Meteor.isClient){
   	});
 
 	Template.addPackages.events({
-		'click button': function (e, t) {
+		'click #SubmitButton': function (e, t) {
 			e.preventDefault();
 
 			var query = "http://127.0.0.1:8080/packagetrackupdate/" + $('#searchquery').val();
 			Session.set('uuid', query);
+		},
+		'click #EnterButton': function(e, t){
+			e.preventDefault();
+			var toRadians = function(lol){
+				return lol * Math.PI / 180;
+			}
+			var lat1 = Testdb.findOne({uuid: Session.get('uuid')}, {sort:{time:-1}}).lat;
+			var lon1 = Testdb.findOne({uuid: Session.get('uuid')}, {sort:{time:-1}}).lon;
+			var lat2 = $('#searchlat').val();
+			var lon2 = $('#searchlon').val();
+				var R = 6371000; // metres
+				var lol1 = toRadians(lat1);
+				var lol2 = toRadians(lat2);
+				var tri1 = toRadians(lat2-lat1);
+				var tri2 = toRadians(lon2-lon1);
+
+				var a = Math.sin(tri1/2) * Math.sin(tri1/2) +
+				        Math.cos(lol1) * Math.cos(lol2) *
+				        Math.sin(tri2/2) * Math.sin(tri2/2);
+				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+				var d = R * c;
+				var m = (d/1610);
+				Session.set('distance', m);
 		}
 	});
   	Template.addPackages.helpers({
@@ -34,6 +59,9 @@ if (Meteor.isClient){
 		        zoom: 8
 	      		};
 	    	}
+	  },
+	  distance: function(){
+	  	return Session.get('distance');
 	  }
 	});
 	Template.addPackages.onCreated(function() {
