@@ -11,9 +11,20 @@
 <!-- Templates -->	
 <!-- Layout -->
 <template name="layout">
-	{{>yield url}}
+	<!--{{> userHeader}}-->
+	{{> trackPackages}}
+	<!--{{>yield url}}-->
 	<!--{{> viewPackages}}-->
 	{{> footer}}
+</template>
+
+<template name="testpage">
+	<div class="container">
+		<h2>testing</h2>
+		<ul id="testlist">
+			<li>this is the first list</li>
+		</ul>
+	</div>
 </template>
 
 <template name="addPackages">
@@ -79,7 +90,7 @@
 			</a>
 		</div>
 		<div class="row">
-			<a href="#">
+			<a href="/addPackages">
 				<button type="button" class="btn btn-primary col-xs-4 col-xs-offset-4" style="margin-top: 100px; bottom: 35%; position:absolute;height:10%; font-size:20px;">
 				Add Packages
 				</button>
@@ -88,6 +99,15 @@
 	</div>
 </template>
 <!-- end of User Mode -->
+
+<template name="trackPackages">
+	<div class="container-fluid">
+		<div class="map-container">
+		    {{> googleMap name="exampleMap" options=exampleMapOptions}}
+		  </div>
+	</div>
+	...
+</template>
 
 <!-- Admin Mode -->
 <template name="admin">

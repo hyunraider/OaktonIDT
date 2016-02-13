@@ -1,8 +1,10 @@
+
 Router.configure({
 	layoutTemplate: 'layout',
 	yieldTemplates: {
 		'home': {to: 'home'},
-		'viewPackages': {to: 'viewPackages'}
+		'viewPackages': {to: 'viewPackages'},
+		'addPackages': {to: 'addPackages'}
 	}
 });
 
