@@ -4,6 +4,7 @@ Router.configure({
 	yieldTemplates: {
 		'home': {to: 'home'},
 		'viewPackages': {to: 'viewPackages'},
+		'registration': {to: 'registration'},
 		'addPackages': {to: 'addPackages'}
 	}
 });

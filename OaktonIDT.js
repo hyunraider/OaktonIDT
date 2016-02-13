@@ -1,4 +1,6 @@
 if (Meteor.isClient){
+	Session.setDefault('uuid', null);
+
 	Template.layout.helpers({
 	  url: function(){
 	    return Session.get('url');
@@ -14,19 +16,27 @@ if (Meteor.isClient){
     	GoogleMaps.load();
   	});
 
-  	Template.trackPackages.helpers({
+	Template.addPackages.events({
+		'click button': function (e, t) {
+			e.preventDefault();
+
+			var query = "http://127.0.0.1:8080/packagetrackupdate/" + $('#searchquery').val();
+			Session.set('uuid', query);
+		}
+	});
+  	Template.addPackages.helpers({
 	  exampleMapOptions: function() {
 	    // Make sure the maps API has loaded
-	    if (GoogleMaps.loaded()) {
+	    	if (GoogleMaps.loaded()) {
 	      // Map initialization options
-	      return {
-	        center: new google.maps.LatLng(Testdb.findOne({}, {sort:{time:-1}}).lat, Testdb.findOne({}, {sort:{time:-1}}).lon),
-	        zoom: 8
-	      };
-	    }
+		      return {
+		        center: new google.maps.LatLng(Testdb.findOne({uuid: Session.get('uuid')}, {sort:{time:-1}}).lat, Testdb.findOne({uuid: Session.get('uuid')}, {sort:{time:-1}}).lon),
+		        zoom: 8
+	      		};
+	    	}
 	  }
 	});
-	Template.trackPackages.onCreated(function() {
+	Template.addPackages.onCreated(function() {
 	  // We can use the `ready` callback to interact with the map API once the map is ready.
 	  GoogleMaps.ready('exampleMap', function(map) {
 	    // Add a marker to the map once it's ready
