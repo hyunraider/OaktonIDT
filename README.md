@@ -2,7 +2,7 @@ This is the repository for Oakton HS Team 1 in the IDT Programming Competition. 
 
 This is a rather incomplete application that does have the functionality to view a certain tracking through the UUID.
 
-![alt tag](http://imgur.com/W9Sh2C0)
+![alt tag](/screenshot.png?raw=true "Optional Title")
 
 This web application is written in a Javascript framework called Meteor.
 It is not deployed, you can only host the server locally.
