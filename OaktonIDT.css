@@ -11,7 +11,7 @@ h4{
 	font-family:Verdana;
 }
 body{
-	background-color:#39AEA8;
+	background-color:white;
 }
 body {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -38,7 +38,7 @@ body {
 
 .jumbotron h1 {
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: bold; 
 }
 
 .row {
@@ -64,3 +64,17 @@ p {
 	background-color: green;
 }
 
+#create{
+	font-size:10px;
+	position:absolute;
+	width:100%;
+	bottom:35%;
+	text-align: center;
+}
+#create h5{
+	color:blue;
+}
+#header{
+	text-align: center;
+	color:black;
+}

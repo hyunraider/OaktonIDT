@@ -2,7 +2,9 @@ Router.configure({
 	layoutTemplate: 'layout',
 	yieldTemplates: {
 		'home': {to: 'home'},
-		'viewPackages': {to: 'viewPackages'}
+		'viewPackages': {to: 'viewPackages'},
+		'registration': {to: 'registration'},
+		'addPackages': {to: 'addPackages'}
 	}
 });
 
